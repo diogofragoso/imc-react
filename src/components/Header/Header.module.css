@@ -1,0 +1,27 @@
+.header{
+
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    align-items: center;
+    color: #00ff00ad;
+    height: 100px;
+    border-bottom: 6px solid #00ff00ad;
+    
+}
+
+.header nav{
+
+    font-size: 48px;
+    font-weight: 500px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 22px;
+   
+
+
+}
