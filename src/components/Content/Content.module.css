@@ -27,11 +27,15 @@ body{
     opacity: 0.8;
 }
 
-.card{
+.card {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 340px;
     height: 245px;
-    color: chocolate;
+}
+
+.card h2{
+    color: #2c2c2c;
+
 }

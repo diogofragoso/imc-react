@@ -11,9 +11,12 @@ function Content() {
     const [resultado, setResultado] = useState();
     const [peso, setPeso] = useState();
     const [altura, setAltura] = useState();
-    const [botao, setBotao] = useState();
+    const [botao, setBotao] = useState(false);
     const [exibirResultado, setExibirResultado] = useState('Resultado');
 
+    const handleClick = () => {
+        setBotao(!botao); // Alterna entre true e false quando o botão é clicado
+    };
 
 
 
@@ -71,9 +74,12 @@ function Content() {
                                 </Form>
                             </CardText>
                             <Button
+                                className={botao ? "botao-ativo" : "botao-inativo"} onClick={handleClick}>
+                                {botao ? "Ativo" : "Inativo"}
+                                
                                 type="button"
-                                onClick={Resultado}
-                            >
+                                onClick={ Resultado }
+                            
                                 Calcular
                             </Button>
 
