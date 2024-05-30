@@ -74,11 +74,12 @@ function Content() {
                                 </Form>
                             </CardText>
                             <Button
-                                className={botao ? "botao-ativo" : "botao-inativo"} onClick={handleClick}>
-                                {botao ? "Ativo" : "Inativo"}
-                                
-                                type="button"
-                                onClick={ Resultado }
+                            
+                            type="button"
+                            onClick={ Resultado }
+                            
+                            
+                            >                               
                             
                                 Calcular
                             </Button>
