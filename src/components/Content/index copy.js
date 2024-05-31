@@ -6,28 +6,27 @@ import Grafico from "../Grafico";
 function Content() {
 
 
-    const [resultado, setResultado] = useState(0);
-    const [peso, setPeso] = useState('');
-    const [altura, setAltura] = useState('');
+    const [resultado, setResultado] = useState();
+    const [peso, setPeso] = useState();
+    const [altura, setAltura] = useState();
     const [botao, setBotao] = useState(false);
-   
+    const [exibirResultado, setExibirResultado] = useState('Resultado');
 
-   
+    const handleClick = () => {
+        setBotao(!botao); // Alterna entre true e false quando o botão é clicado
+    };
+
 
 
     function Resultado() {
 
-        if(peso && altura ){
         let novoResultado = peso / (altura * altura);
         setResultado(novoResultado.toFixed(2));
-        }
+
+
+        // alert(resultado);
 
     }
-
-
-
-    
-
 
 
 
@@ -37,7 +36,7 @@ function Content() {
             <div className={styles.content}>
 
                 <Row>
-                    <Col xl="6">
+                    <Col sm="6">
                         <Card body>
 
                             <CardText>
@@ -75,28 +74,33 @@ function Content() {
                             <Button
                             
                             type="button"
-                            onClick={ Resultado }                           
+                            onClick={ Resultado }
+                            
                             
                             >                               
                             
                                 Calcular
                             </Button>
 
+
+
                         </Card>
                     </Col>
+                    <Col sm="6">
+                        <Card body className={styles.grafico}>
+                            <CardTitle tag="h5">
+                                {/* {resultado !== null ? ( <h2 id="exibirResultado"> Resultado: {resultado} </h2> ) : (<h2 id="exibirResultado">Nenhum resultado </h2> )} */}
 
-                   
+                            </CardTitle>
+                            <CardText>
+                              
+                             
+                            </CardText>
 
-                    <Col xl="6" className={styles.grafico}>
 
-                        {/* {resultado > 0 && <Grafico imc={parseFloat(resultado)} /> }  Renderiza o gráfico apenas se o resultado for maior que 0 */}
-                        <Grafico imc={parseFloat(resultado)} />
-                        {/* <Grafico imc={resultado} />  aqui vai dar erro por causa do parseFloat*/} 
-                       
-                        
-                        
+
+                        </Card>
                     </Col>
-                    
                 </Row>
 
 
@@ -104,7 +108,8 @@ function Content() {
 
 
             </div>
-         
+           
+
 
         </div>
 
