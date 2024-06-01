@@ -20,26 +20,17 @@ export const options = {
     width: 700,
     height: 250,
 
-    greenFrom: 0,
-    greenTo: 15,
-    greenColor: "#00FF00",
+    greenFrom: 18.6,
+    greenTo: 24.9,
+    greenColor: "#90EE90",
 
-    yellowFrom: 15.1,
-    yellowTo: 18.4,
-    yellowColor: "#FFFF00",
-
-    orangeFrom: 18.5,
-    orangeTo: 24.9,
-    orangeColor: "#FFA500",
-
+    yellowFrom: 0,
+    yellowTo: 18.5,
+    yellowColor: "#FFD700",
+  
     redFrom: 25,
-    redTo: 30,
-    redColor: "#FF0000",
-
-    purpleFrom: 30.1,  // Início da faixa roxa
-    purpleTo: 50,      // Final da faixa roxa
-    purpleColor: "#800080",    // Cor roxa para a faixa roxa
-    
+    redTo: 50,
+    redColor: "#FF7F7F",    
     
 
 

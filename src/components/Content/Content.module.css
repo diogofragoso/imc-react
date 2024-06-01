@@ -43,6 +43,14 @@ body{
 }
 
 
+.texto h2{
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+    color: #fff;
+    margin-top: 4rem;
+}
+
 
 /* .grafico :hover{
     background-color: chocolate;
