@@ -4,6 +4,13 @@ import styles from "./Content.module.css";
 import { Row, Col, Card, CardTitle, CardText, Button, Form, Label, Input, FormText, FormGroup, FormFeedback } from "reactstrap";
 import Grafico from "../Grafico";
 import Corpo from "../Grafico/Corpo";
+import React, { useContext } from 'react';
+import ThemeContext from '../ThemeContext';
+import GenderSelector from '../GenderSelector';
+
+
+
+
 function Content() {
 
 
@@ -35,11 +42,6 @@ function Content() {
         }
 
     }
-
-
-
-
-
 
 
 
@@ -97,7 +99,14 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
 
 
 
+const { theme } = useContext(ThemeContext);
 
+    const profileStyle = {
+        backgroundColor: theme.background,
+        color: theme.color,
+        padding: '20px',
+        borderRadius: '5px'
+    };
 
 
 
@@ -106,6 +115,14 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
 
         <div className="container-fluid">
             <div className={styles.content}>
+
+            <div style={profileStyle}> {/* Estilo que dependo do contexto */}
+
+            <h1>Perfil do Usuário</h1>            
+            <GenderSelector />
+
+            {/* Outros componentes ou informações do perfil */}
+                
 
                 <Row>
                     <Col xl="6">
@@ -123,10 +140,10 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
                                             id="pesoInput"
                                             valid placeholder="Digite o peso"
                                             onChange={e => setPeso(parseFloat(e.target.value))}
-
+                                            
                                             value={peso}
-
-                                        />
+                                            
+                                            />
 
                                         <Label for="example">
                                             Altura
@@ -136,11 +153,11 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
                                             type="number"
                                             valid placeholder="Digite a altura"
                                             onChange={e => setAltura(parseFloat(e.target.value))}
-
+                                            
                                             value={altura}
-
-
-                                        />
+                                            
+                                            
+                                            />
 
 
                                     </FormGroup>
@@ -151,8 +168,8 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
 
                                 type="button"
                                 onClick={Resultado}
-
-                            >
+                                
+                                >
 
                                 Calcular
                             </Button>
@@ -173,19 +190,22 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
 
                 </Row>
 
+                
+
 
 
 
 
 
             </div>
+          </div> {/* FIm do contexto*/}
+
             <Row className={styles.texto}>
                 <Col xl="12">
                     <div>
                         {/* <h2 id="exibirImc">{exibirImc}</h2> */}
                         <Corpo 
-                        imagem={corpo}
-                        
+                        imagem={corpo}                        
                         />
                         
 
@@ -194,9 +214,6 @@ resultados maiores do que 40 — obesidade grau III ou mórbida.
                 </Col>
             </Row>
         </div>
-
-
-
 
     );
 

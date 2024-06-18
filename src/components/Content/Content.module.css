@@ -52,6 +52,13 @@ body{
 }
 
 
+.content h1{
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    
+}
+
 /* .grafico :hover{
     background-color: chocolate;
 } */

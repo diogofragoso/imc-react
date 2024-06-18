@@ -1,0 +1,14 @@
+.genero{
+
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin: 12px;
+    padding: 6px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+    
+   
+    
+}
